@@ -1,0 +1,23 @@
+plugins {
+    id "application"
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+compileJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = "enigma.Main"
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:5.5.1"
+    testImplementation "org.assertj:assertj-core:3.13.2"
+}
+
+test {
+    useJUnitPlatform()
+}
