@@ -25,6 +25,18 @@ public class IOPosition implements Serializable {
         return this.value;
     }
 
+    IOPosition plus(int n) {
+        return new IOPosition(this.value.plus(n));
+    }
+
+    IOPosition plus(Offset offset, RotateAmount rotateAmount) {
+        return new IOPosition(this.value.plus(offset.getValue()).plus(rotateAmount.getValue()));
+    }
+
+    IOPosition minus(Offset offset, RotateAmount rotateAmount) {
+        return new IOPosition(this.value.minus(offset.getValue()).minus(rotateAmount.getValue()));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,17 +55,5 @@ public class IOPosition implements Serializable {
         return "IOPosition{" +
                 "value=" + value +
                 '}';
-    }
-    
-    IOPosition plus(int n) {
-        return new IOPosition(this.value.plus(n));
-    }
-
-    IOPosition plus(Offset offset, RotateAmount rotateAmount) {
-        return new IOPosition(this.value.plus(offset.getValue()).plus(rotateAmount.getValue()));
-    }
-    
-    IOPosition minus(Offset offset, RotateAmount rotateAmount) {
-        return new IOPosition(this.value.minus(offset.getValue()).minus(rotateAmount.getValue()));
     }
 }

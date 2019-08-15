@@ -47,13 +47,13 @@ public class Scrambler implements Serializable {
         this.reverseMap = reversed;
     }
     
-    public IOPosition scramble(IOPosition input, Offset offset, RotateAmount rotateAmount) {
+    IOPosition scramble(IOPosition input, Offset offset, RotateAmount rotateAmount) {
         IOPosition shifted = input.minus(offset, rotateAmount);
         IOPosition scrambled = this.map.get(shifted);
         return scrambled.plus(offset, rotateAmount);
     }
     
-    public IOPosition reverse(IOPosition input, Offset offset, RotateAmount rotateAmount) {
+    IOPosition reverse(IOPosition input, Offset offset, RotateAmount rotateAmount) {
         IOPosition shifted = input.minus(offset, rotateAmount);
         IOPosition reversed = this.reverseMap.get(shifted);
         return reversed.plus(offset, rotateAmount);

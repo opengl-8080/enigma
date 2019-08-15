@@ -25,15 +25,15 @@ public class Modulo26 implements Serializable {
         return this.value;
     }
 
-    public Modulo26 plus(Modulo26 other) {
+    Modulo26 plus(Modulo26 other) {
         return this.plus(other.value);
     }
     
-    public Modulo26 minus(Modulo26 other) {
+    Modulo26 minus(Modulo26 other) {
         return this.plus(-1 * other.value);
     }
 
-    public Modulo26 plus(int n) {
+    Modulo26 plus(int n) {
         return new Modulo26(this.value + n);
     }
     

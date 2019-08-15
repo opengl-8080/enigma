@@ -6,7 +6,7 @@ import java.util.Objects;
  * 回転量.
  */
 public class RotateAmount {
-    public static final RotateAmount ZERO = RotateAmount.of(0);
+    static final RotateAmount ZERO = RotateAmount.of(0);
     private final Modulo26 value;
     
     public static RotateAmount of(int value) {
@@ -21,11 +21,11 @@ public class RotateAmount {
         return this.value;
     }
     
-    public boolean isZero() {
+    boolean isZero() {
         return this.value.isZero();
     }
     
-    public RotateAmount rotate() {
+    RotateAmount rotate() {
         return new RotateAmount(this.value.plus(1));
     }
 

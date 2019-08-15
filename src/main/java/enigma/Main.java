@@ -36,7 +36,6 @@ public class Main {
 
         System.out.println(encrypted);
         
-        // tfgoegiokk
         Enigma decryption = Enigma.newInstance(Key.D, firstScrambler, Key.K, secondScrambler, Key.F, thirdScrambler, Main::initializePlugboard);
 
         String plainText = decryption.input(encrypted);

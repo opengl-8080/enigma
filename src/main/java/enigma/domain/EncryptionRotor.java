@@ -11,7 +11,7 @@ public class EncryptionRotor implements Rotor {
     private final Rotor nextRotor;
     private RotateAmount rotateAmount;
 
-    public EncryptionRotor(Offset offset, Scrambler scrambler, Rotor nextRotor) {
+    EncryptionRotor(Offset offset, Scrambler scrambler, Rotor nextRotor) {
         this.offset = Objects.requireNonNull(offset);
         this.scrambler = Objects.requireNonNull(scrambler);
         this.nextRotor = Objects.requireNonNull(nextRotor);

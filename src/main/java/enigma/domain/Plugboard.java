@@ -11,7 +11,7 @@ public class Plugboard {
     private final Rotor rotor;
     private final Map<Key, Key> exchangeMap = new HashMap<>();
 
-    public Plugboard(Rotor rotor) {
+    Plugboard(Rotor rotor) {
         this.rotor = Objects.requireNonNull(rotor);
     }
 

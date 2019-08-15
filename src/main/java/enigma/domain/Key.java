@@ -1,14 +1,11 @@
 package enigma.domain;
 
-import java.util.List;
 import java.util.Objects;
 
 /**
  * キー.
  */
 public class Key {
-    static final int MAX_COUNT = 26;
-    
     public static final Key A = new Key('a');
     public static final Key B = new Key('b');
     public static final Key C = new Key('c');
@@ -36,15 +33,11 @@ public class Key {
     public static final Key Y = new Key('y');
     public static final Key Z = new Key('z');
     
-    public static List<Key> all() {
-        return List.of(A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z);
-    }
-    
-    public static Key of(char c) {
+    static Key of(char c) {
         return new Key(c);
     }
-    
-    public static Key of(Modulo26 value) {
+
+    static Key of(Modulo26 value) {
         char key = (char)(value.getValue() + 'a');
         return new Key(key);
     }
@@ -57,11 +50,11 @@ public class Key {
         }
         this.value = value;
     }
-    
-    public char getChar() {
+
+    char getChar() {
         return this.value;
     }
-    
+
     Modulo26 toNumber() {
         return Modulo26.of(this.value - 'a');
     }
